@@ -1,0 +1,38 @@
+.App {
+    width: 100vw;
+   
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+  
+input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 50%;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+.weather-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+  .weather-card {
+    color: black;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }

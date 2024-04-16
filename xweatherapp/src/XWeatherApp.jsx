@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "./XWeatherApp.css";
 
 const XWeatherApp = () => {
   
@@ -26,19 +26,38 @@ const XWeatherApp = () => {
     setLoading(false);
   };
 
-
+  const WeatherCard = ({ title, data }) => {
+    return (
+      <div className="weather-card">
+        <h3>{title}</h3>
+        <p>{data}</p>
+      </div>
+    );
+  };
   return (
     <div>
       <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}   placeholder="Enter city name"/>
       <button onClick={fetchData}>Search</button>
       {loading && <p>Loading data...</p>}
       {!loading && weatherData && (
-        <div className="weather-card">
-          <p>Temperature: {weatherData.current.temp_c}°C</p>
-          <p>Humidity: {weatherData.current.humidity}%</p>
-          <p>Condition: {weatherData.current.condition.text}</p>
-          <p>Wind Speed: {weatherData.current.wind_mph} mph</p>
-        </div>
+        <div className="weather-cards">
+        <WeatherCard
+          title="Temperature"
+          data={`${weatherData.current.temp_c}°C`}
+        />
+        <WeatherCard
+          title="Humidity"
+          data={`${weatherData.current.humidity}%`}
+        />
+        <WeatherCard
+          title="Condition"
+          data={weatherData.current.condition.text}
+        />
+        <WeatherCard
+          title="Wind Speed"
+          data={`${weatherData.current.wind_kph} kph`}
+        />
+      </div>
       )}
     </div>
   );

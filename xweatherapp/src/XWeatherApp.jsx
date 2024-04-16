@@ -36,7 +36,7 @@ const XWeatherApp = () => {
   };
   return (
     <div>
-      <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}   placeholder="Enter city name"/>
+      <input className="searchBar" type="text" value={city} onChange={(e)=>setCity(e.target.value)}   placeholder="Enter city name"/>
       <button onClick={fetchData}>Search</button>
       {loading && <p>Loading data...</p>}
       {!loading && weatherData && (

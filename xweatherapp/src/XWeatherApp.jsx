@@ -29,11 +29,11 @@ const XWeatherApp = () => {
 
   return (
     <div>
-      <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}/>
+      <input type="text" value={city} onChange={(e)=>setCity(e.target.value)}   placeholder="Enter city name"/>
       <button onClick={fetchData}>Search</button>
       {loading && <p>Loading data...</p>}
       {!loading && weatherData && (
-        <div>
+        <div className="weather-card">
           <p>Temperature: {weatherData.current.temp_c}°C</p>
           <p>Humidity: {weatherData.current.humidity}%</p>
           <p>Condition: {weatherData.current.condition.text}</p>
